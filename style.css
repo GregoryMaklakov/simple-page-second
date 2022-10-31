@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main {
+    background: url(img/main-bg.jpg) no-repeat center center / cover ;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main__container, .footer__container {
+    max-width: calc(1186px + 32px);
+    margin: 0 auto;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.header {
+    padding: 22px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111827;
+    position: relative;
+}
+
+.header__link:not(:last-child) {
+    margin-right: 40px;
+}
+.header__link::before {
+    content:'';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 1.5px;
+    background: #111827;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.header__link:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* MAIN BLOCK =============================================================================================================================*/
+
+.main-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 700px;
+    padding-top: 148px;
+    padding-bottom: 228px;
+}
+
+.main-block__title {
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 72px;
+    letter-spacing: -0.015em;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.main-block__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.main-block__buttons {
+    display: flex;
+}
+
+.main-block__button {
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.3s ease 0s;
+}
+
+.main-block__button:not(:last-child) {
+    margin-right: 16px;
+}
+
+.main-block__button-black {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.main-block__button-black:hover {
+    background: inherit;
+    color: #000000;
+    box-shadow: 0px 0px 0px 2px #000000;
+}
+
+.main-block__button-black:focus {
+    box-shadow: 0px 0px 0px 1px #000000;
+}
+
+.main-block__button-inherit:hover {
+    box-shadow: 0px 0px 0px 2px #000000;
+}
+
+.main-block__button-inherit:focus {
+    box-shadow: 0px 0px 0px 1px #000000;
+}
+
+/* Footer  ==============================================================================================================*/
+
+.foooter {
+    background-color: #fff;
+    background: #000000;
+}
+.footer__container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.foooter__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #D1D5DB;
+}
+
+.icon-menu {
+	display: none;
+}
+
+@media (max-width: 576px) {
+    .header__list {
+        display: none;
+    }
+
+    .icon-menu {
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 14px;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .icon-menu span,
+    .icon-menu::after,
+    .icon-menu::before {
+        content: "";
+        transition: all 0.3s ease 0s;
+        right: 0;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        border-radius: 100px;
+    } 
+
+    .icon-menu::before {
+        top: 0;
+    }
+
+    .icon-menu::after {
+        bottom: 0;
+    }
+
+    .icon-menu span {
+        top: calc(50% - 1px);
+    }
+
+    .main-block {
+        padding-top:calc(36px + 84px);
+        padding-bottom: 208px;
+    }
+
+    .main-block__title {
+        font-size: 36px;
+        line-height: 145%;
+    }
+
+    .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        padding-left: 16px;
+        padding-right: 16px;
+        backdrop-filter: blur(6px);
+    }
+
+    .main {
+        background-attachment: fixed;
+    }
+}
